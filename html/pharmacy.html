@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediFlow - Pharmacy Network</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwindcss/tailwind-config.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-canvas text-brand-dark font-sans h-screen flex overflow-hidden">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="w-[240px] bg-brand-dark text-white flex flex-col shrink-0">
+    <div class="h-16 flex flex-col justify-center px-6 border-b border-white/10">
+      <h1 class="text-xl font-bold tracking-tight">MediFlow</h1>
+      <span class="text-xs text-slate-400">Admin Portal</span>
+    </div>
+    
+    <nav class="flex-1 overflow-y-auto py-4 space-y-1">
+      <a href="index.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Dashboard</span>
+      </a>
+      <a href="users.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="users" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Users</span>
+      </a>
+      <a href="verification.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="shield-check" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Verification</span>
+      </a>
+      <a href="pharmacy.html" class="flex items-center px-6 py-3 bg-[#1E293B] border-l-4 border-brand-primary text-white">
+        <i data-lucide="plus-square" class="w-5 h-5 mr-3 text-brand-primary"></i>
+        <span class="text-sm font-medium">Pharmacy</span>
+      </a>
+      <a href="catalog.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="folder-kanban" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Catalog</span>
+      </a>
+      <a href="support.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="headphones" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Support</span>
+      </a>
+      <a href="finance.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="banknote" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Finance</span>
+      </a>
+      <a href="security.html" class="flex items-center px-6 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-colors border-l-4 border-transparent">
+        <i data-lucide="shield" class="w-5 h-5 mr-3"></i>
+        <span class="text-sm font-medium">Security</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+    
+    <!-- Header -->
+    <header class="h-16 bg-white border-b border-surface-border flex items-center justify-between px-8 shrink-0 relative z-10">
+      <div class="flex items-center gap-8 flex-1">
+        <div class="font-bold text-lg text-brand-dark">MediFlow Admin</div>
+        
+        <!-- Search -->
+        <div class="relative max-w-md w-full">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i data-lucide="search" class="h-4 w-4 text-slate-400"></i>
+          </div>
+          <input type="text" placeholder="Search..." class="block w-full pl-10 pr-3 py-2 border border-surface-border rounded-md leading-5 bg-slate-50 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-primary focus:border-brand-primary sm:text-sm transition-colors">
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <button class="text-slate-400 hover:text-brand-dark transition-colors relative">
+          <i data-lucide="bell" class="w-5 h-5"></i>
+          <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-semantic-error-text ring-2 ring-white"></span>
+        </button>
+        <button class="text-slate-400 hover:text-brand-dark transition-colors">
+          <i data-lucide="help-circle" class="w-5 h-5"></i>
+        </button>
+        <button class="text-slate-400 hover:text-brand-dark transition-colors">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+        </button>
+        <div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden border border-slate-300 ml-2">
+          <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="Profile" class="h-full w-full object-cover">
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="flex-1 overflow-y-auto p-8">
+      
+      <!-- Page Header -->
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h1 class="text-h1-bold text-brand-dark mb-1">Pharmacy Network</h1>
+          <p class="text-body-md text-slate-500">Manage partner branch locations, stock sync status, and performance metrics.</p>
+        </div>
+        <div class="flex gap-3">
+          <button class="px-4 py-2 bg-white border border-surface-border rounded-md text-sm font-medium flex items-center hover:bg-slate-50 transition-colors">
+            <i data-lucide="download" class="w-4 h-4 mr-2 text-slate-500"></i>
+            Export Data
+          </button>
+          <button class="px-4 py-2 bg-black text-white rounded-md text-sm font-medium flex items-center hover:bg-gray-800 transition-colors shadow-sm">
+            <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+            Add Branch
+          </button>
+        </div>
+      </div>
+
+      <!-- Split View Grid -->
+      <div class="flex gap-6 h-[calc(100vh-220px)] min-h-[500px]">
+        
+        <!-- Left: Table -->
+        <div class="flex-1 bg-white rounded-lg border border-surface-border shadow-sm flex flex-col overflow-hidden">
+          
+          <!-- Filters -->
+          <div class="p-4 border-b border-surface-border flex justify-between items-end bg-slate-50/50">
+            <div class="flex gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-500 mb-1">Region</label>
+                <select class="border border-surface-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary w-40">
+                  <option>All Regions</option>
+                  <option>New York</option>
+                  <option>California</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-500 mb-1">Stock Sync Status</label>
+                <select class="border border-surface-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary w-40">
+                  <option>All Statuses</option>
+                  <option>Active</option>
+                  <option>Error</option>
+                </select>
+              </div>
+            </div>
+            <div class="text-sm text-slate-500 font-medium flex items-center gap-2">
+              <i data-lucide="filter" class="w-4 h-4"></i>
+              Showing 242 branches
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="flex-1 overflow-y-auto">
+            <table class="w-full text-left border-collapse">
+              <thead class="sticky top-0 z-10 bg-white">
+                <tr class="bg-slate-50 border-b border-surface-border text-label-caps text-slate-500 uppercase tracking-wider">
+                  <th class="p-4 font-semibold">ID</th>
+                  <th class="p-4 font-semibold">Branch Name</th>
+                  <th class="p-4 font-semibold">Location</th>
+                  <th class="p-4 font-semibold">Sync Status</th>
+                  <th class="p-4 font-semibold text-right">Commission Rate</th>
+                  <th class="p-4 font-semibold text-right">Last Sync</th>
+                </tr>
+              </thead>
+              <tbody class="text-body-sm-tabular">
+                
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                  <td class="p-4 text-slate-500">#1042</td>
+                  <td class="p-4 font-bold text-brand-dark">MediPharm Central</td>
+                  <td class="p-4 text-slate-600">Downtown, NY</td>
+                  <td class="p-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-green-200 bg-semantic-success-bg text-[10px] font-bold text-semantic-success-text tracking-wide uppercase">
+                      <span class="w-1.5 h-1.5 rounded-full bg-semantic-success-text mr-1.5"></span>
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right font-medium">12.5%</td>
+                  <td class="p-4 text-right text-slate-500">2 mins ago</td>
+                </tr>
+
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors bg-red-50/30">
+                  <td class="p-4 text-slate-500">#1043</td>
+                  <td class="p-4 font-bold text-brand-dark">HealthPlus West</td>
+                  <td class="p-4 text-slate-600">Westside, NY</td>
+                  <td class="p-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-red-200 bg-semantic-error-bg text-[10px] font-bold text-semantic-error-text tracking-wide uppercase">
+                      <span class="w-1.5 h-1.5 rounded-full bg-semantic-error-text mr-1.5"></span>
+                      Error
+                    </span>
+                  </td>
+                  <td class="p-4 text-right font-medium">15.0%</td>
+                  <td class="p-4 text-right text-semantic-error-text font-medium">4 hours ago</td>
+                </tr>
+
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                  <td class="p-4 text-slate-500">#1044</td>
+                  <td class="p-4 font-bold text-brand-dark">CVS - Broadway</td>
+                  <td class="p-4 text-slate-600">Midtown, NY</td>
+                  <td class="p-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-green-200 bg-semantic-success-bg text-[10px] font-bold text-semantic-success-text tracking-wide uppercase">
+                      <span class="w-1.5 h-1.5 rounded-full bg-semantic-success-text mr-1.5"></span>
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right font-medium">10.0%</td>
+                  <td class="p-4 text-right text-slate-500">Just now</td>
+                </tr>
+
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors bg-yellow-50/30">
+                  <td class="p-4 text-slate-500">#1045</td>
+                  <td class="p-4 font-bold text-brand-dark">Walgreens - 5th Ave</td>
+                  <td class="p-4 text-slate-600">Upper East, NY</td>
+                  <td class="p-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-yellow-200 bg-semantic-warning-bg text-[10px] font-bold text-semantic-warning-text tracking-wide uppercase">
+                      <span class="w-1.5 h-1.5 rounded-full bg-semantic-warning-text mr-1.5"></span>
+                      Warning
+                    </span>
+                  </td>
+                  <td class="p-4 text-right font-medium">11.5%</td>
+                  <td class="p-4 text-right text-yellow-600 font-medium">45 mins ago</td>
+                </tr>
+
+                <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                  <td class="p-4 text-slate-500">#1046</td>
+                  <td class="p-4 font-bold text-brand-dark">CareRx Pharmacy</td>
+                  <td class="p-4 text-slate-600">Brooklyn, NY</td>
+                  <td class="p-4">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-green-200 bg-semantic-success-bg text-[10px] font-bold text-semantic-success-text tracking-wide uppercase">
+                      <span class="w-1.5 h-1.5 rounded-full bg-semantic-success-text mr-1.5"></span>
+                      Active
+                    </span>
+                  </td>
+                  <td class="p-4 text-right font-medium">14.0%</td>
+                  <td class="p-4 text-right text-slate-500">5 mins ago</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Map & Stats -->
+        <div class="w-[320px] xl:w-[400px] flex flex-col gap-6 shrink-0">
+          
+          <!-- Map Card -->
+          <div class="bg-white rounded-lg border border-surface-border shadow-sm flex-1 flex flex-col overflow-hidden">
+            <div class="p-4 border-b border-surface-border flex justify-between items-center">
+              <h2 class="text-sm font-bold text-brand-dark">Network Map</h2>
+              <button class="text-xs font-semibold text-brand-primary hover:text-blue-700">Expand</button>
+            </div>
+            <div class="flex-1 bg-slate-100 relative">
+              <!-- Using iframe for map placeholder to look authentic like the design -->
+              <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-74.02023315429689%2C40.702816353982464%2C-73.93783569335939%2C40.748364121406876&amp;layer=mapnik" 
+                style="border: 0; filter: grayscale(0.2) saturate(0.8);">
+              </iframe>
+              
+              <!-- Map Overlays -->
+              <div class="absolute top-1/2 left-1/3 -mt-4 -ml-4 flex flex-col items-center">
+                <div class="bg-white px-2 py-0.5 rounded shadow text-[10px] font-bold mb-1 border border-slate-200">Central</div>
+                <div class="w-4 h-4 rounded-full bg-semantic-success-text border-2 border-white shadow-md"></div>
+              </div>
+              <div class="absolute top-2/3 right-1/4 flex flex-col items-center">
+                <div class="bg-white px-2 py-0.5 rounded shadow text-[10px] font-bold mb-1 border border-slate-200">West</div>
+                <div class="w-4 h-4 rounded-full bg-semantic-error-text border-2 border-white shadow-md"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Network Health -->
+          <div class="bg-white rounded-lg border border-surface-border shadow-sm p-5 shrink-0">
+            <h2 class="text-label-caps text-slate-500 uppercase mb-4">Network Health</h2>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div>
+                <div class="text-sm text-slate-600 mb-1">Total Branches</div>
+                <div class="text-display-kpi text-brand-dark">242</div>
+              </div>
+              <div>
+                <div class="text-sm text-slate-600 mb-1">Sync Errors</div>
+                <div class="text-display-kpi text-semantic-error-text">14</div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-medium text-slate-600">Uptime (24h)</span>
+                <span class="text-sm font-bold text-semantic-success-text">98.2%</span>
+              </div>
+              <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-semantic-success-text" style="width: 98.2%"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
